@@ -6,7 +6,7 @@ import { PomodoroService } from './pomodoro.service'
 
 @Controller('user/timer')
 export class PomodoroController {
-	constructor(private readonly pomodoroService: PomodoroService) {}
+	constructor(private readonly pomodoroService: PomodoroService) { }
 
 	@Get('today')
 	@Auth()

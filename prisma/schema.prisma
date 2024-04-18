@@ -27,7 +27,6 @@ model User {
   intervalsCount Int? @default(5) @map("intervals_count")
 
   tasks            Task[]
-  timeBlocks       TimeBlock[]
   pomodoroSessions PomodoroSession[]
 
   @@map("user")

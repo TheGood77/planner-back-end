@@ -4,7 +4,7 @@ import { TaskDto } from './task.dto'
 
 @Injectable()
 export class TaskService {
-	constructor(private prisma: PrismaService) {}
+	constructor(private prisma: PrismaService) { }
 
 	async getAll(userId: string) {
 		return this.prisma.task.findMany({

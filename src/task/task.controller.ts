@@ -6,7 +6,7 @@ import { TaskService } from './task.service'
 
 @Controller('user/tasks')
 export class TaskController {
-	constructor(private readonly taskService: TaskService) {}
+	constructor(private readonly taskService: TaskService) { }
 
 	@Get()
 	@Auth()

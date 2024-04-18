@@ -8,7 +8,7 @@ import { startOfDay, subDays } from 'date-fns'
 
 @Injectable()
 export class UserService {
-	constructor(private prisma: PrismaService) {}
+	constructor(private prisma: PrismaService) { }
 
 	getById(id: string) {
 		return this.prisma.user.findUnique({

@@ -13,7 +13,7 @@ export class AuthService {
 	constructor(
 		private jwt: JwtService,
 		private userService: UserService
-	) {}
+	) { }
 
 	async login(dto: AuthDto) {
 		const { password, ...user } = await this.validateUser(dto)
@@ -87,7 +87,6 @@ export class AuthService {
 			domain: 'localhost',
 			expires: expiresIn,
 			secure: true,
-			// lax if production
 			sameSite: 'none'
 		})
 	}
@@ -98,7 +97,6 @@ export class AuthService {
 			domain: 'localhost',
 			expires: new Date(0),
 			secure: true,
-			// lax if production
 			sameSite: 'none'
 		})
 	}

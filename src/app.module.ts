@@ -6,6 +6,6 @@ import { TaskModule } from './task/task.module'
 import { PomodoroModule } from './pomodoro/pomodoro.module'
 
 @Module({
-  imports: [ ConfigModule.forRoot(), AuthModule, UserModule, TaskModule, PomodoroModule ],
+  imports: [ConfigModule.forRoot(), AuthModule, UserModule, TaskModule, PomodoroModule],
 })
-export class AppModule {}
+export class AppModule { }
