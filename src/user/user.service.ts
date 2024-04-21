@@ -47,7 +47,7 @@ export class UserService {
 			where: {
 				userId: id,
 				createdAt: {
-					gte: todayStart.toISOString()
+					lte: todayStart.toISOString()
 				}
 			}
 		})
@@ -56,7 +56,7 @@ export class UserService {
 			where: {
 				userId: id,
 				createdAt: {
-					gte: weekStart.toISOString()
+					lte: weekStart.toISOString()
 				}
 			}
 		})
