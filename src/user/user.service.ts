@@ -4,7 +4,7 @@ import { AuthDto } from 'src/auth/dto/auth.dto'
 import { PrismaService } from 'src/prisma.service'
 import { UserDto } from './user.dto'
 
-import { startOfDay, subDays } from 'date-fns'
+import { addDays, endOfWeek, startOfDay } from 'date-fns'
 
 @Injectable()
 export class UserService {
@@ -41,7 +41,7 @@ export class UserService {
 		})
 
 		const todayStart = startOfDay(new Date())
-		const weekStart = startOfDay(subDays(new Date(), 7))
+		const weekEnd = addDays(endOfWeek(new Date()), 1)
 
 		const todayTasks = await this.prisma.task.count({
 			where: {
@@ -56,7 +56,7 @@ export class UserService {
 			where: {
 				userId: id,
 				createdAt: {
-					lte: weekStart.toISOString()
+					lte: weekEnd.toISOString(),
 				}
 			}
 		})
